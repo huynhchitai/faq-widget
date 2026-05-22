@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Theme tokens ─────────────────────────────────────────────────────────── */
+:root {
+  /* Surfaces — warm peach/cream */
+  --cream: #fdf6ef;
+  --cream-rgb: 253, 246, 239; /* RGB channels for Tailwind opacity modifier (bg-cream/90) */
+  --parchment: #f9ede1;
+  --blush: #fde8d8;
+
+  /* Coral accent */
+  --coral: #e8613a;
+  --coral-rgb: 232, 97, 58; /* RGB channels for Tailwind opacity modifier (ring-coral/20 etc.) */
+  --coral-deep: #c94f2a;
+  --coral-light: #f5977a;
+
+  /* Grass accent */
+  --grass: #4caf7d;
+  --grass-light: #7ecfa0;
+
+  /* Ink */
+  --ink: #1c1410;
+  --ink-soft: #4a3728;
+  --ink-quiet: #8a6e5e;
+
+  /* Widget specific */
+  --widget-bg: #fff8f3;
+  --widget-border: #e8d5c5;
+
+  /* Fonts */
+  --font-display: 'Baloo 2', system-ui, sans-serif;
+  --font-body: 'Mulish', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ── Base resets ──────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Typography ───────────────────────────────────────────────────────────── */
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background-color: var(--cream);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+code, pre, kbd {
+  font-family: var(--font-mono);
+}
+
+/* ── Component classes ────────────────────────────────────────────────────── */
+@layer components {
+  /* Navigation bar */
+  .nav-bar {
+    @apply sticky top-0 z-50 border-b border-widget-border bg-cream/90 backdrop-blur-sm;
+  }
+
+  /* Pill button — coral */
+  .btn-coral {
+    @apply inline-flex items-center gap-2 rounded-pill bg-coral px-6 py-3
+           font-display font-semibold text-white
+           shadow-pillowy-sm
+           transition-all duration-200
+           hover:bg-coral-deep hover:shadow-pillowy hover:-translate-y-0.5
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2
+           active:translate-y-0 active:shadow-pillowy-sm;
+  }
+
+  /* Pill button — ghost */
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-pill border-2 border-coral px-6 py-3
+           font-display font-semibold text-coral
+           transition-all duration-200
+           hover:bg-blush hover:-translate-y-0.5
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2;
+  }
+
+  /* Pill button — grass */
+  .btn-grass {
+    @apply inline-flex items-center gap-2 rounded-pill bg-grass px-6 py-3
+           font-display font-semibold text-white
+           shadow-sm
+           transition-all duration-200
+           hover:opacity-90 hover:-translate-y-0.5
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-grass focus-visible:ring-offset-2;
+  }
+
+  /* Card — soft pillowy */
+  .card {
+    @apply rounded-3xl bg-white/80 border border-widget-border p-6
+           shadow-card backdrop-blur-sm
+           transition-shadow duration-200
+           hover:shadow-card-hover;
+  }
+
+  /* Card — no hover */
+  .card-static {
+    @apply rounded-3xl bg-white/80 border border-widget-border p-6 shadow-card;
+  }
+
+  /* Section label */
+  .eyebrow {
+    @apply font-display text-xs font-semibold uppercase tracking-widest text-coral;
+  }
+
+  /* Textarea */
+  .field-textarea {
+    @apply w-full rounded-2xl border-2 border-widget-border bg-white/70 px-4 py-3
+           font-body text-sm text-ink placeholder:text-ink-quiet
+           focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral/20
+           transition-colors duration-200 resize-none;
+  }
+
+  /* Input */
+  .field-input {
+    @apply w-full rounded-pill border-2 border-widget-border bg-white/70 px-4 py-2.5
+           font-body text-sm text-ink placeholder:text-ink-quiet
+           focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral/20
+           transition-colors duration-200;
+  }
+
+  /* Code snippet box */
+  .code-box {
+    @apply rounded-2xl bg-ink p-4 font-mono text-xs text-coral-light overflow-x-auto;
+  }
+
+  /* Tag / badge */
+  .badge {
+    @apply inline-flex items-center rounded-pill bg-blush px-3 py-1
+           font-body text-xs font-semibold text-coral-deep;
+  }
+
+  /* Dot loader */
+  .dot-loader {
+    @apply flex items-center gap-1.5;
+  }
+
+  .dot-loader span {
+    @apply inline-block h-2 w-2 rounded-full bg-coral animate-pulse-dot;
+  }
+
+  .dot-loader span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .dot-loader span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  /* Chat bubble */
+  .bubble-user {
+    @apply rounded-3xl rounded-br-lg bg-coral px-4 py-3 text-sm text-white font-body max-w-[85%] self-end;
+  }
+
+  .bubble-bot {
+    @apply rounded-3xl rounded-bl-lg bg-white border border-widget-border px-4 py-3
+           text-sm text-ink font-body max-w-[85%] self-start shadow-sm;
+  }
+
+  /* Stagger animation helpers */
+  .reveal-1 { animation-delay: 0ms; }
+  .reveal-2 { animation-delay: 80ms; }
+  .reveal-3 { animation-delay: 160ms; }
+  .reveal-4 { animation-delay: 240ms; }
+  .reveal-5 { animation-delay: 320ms; }
+  .reveal-6 { animation-delay: 400ms; }
+}
+
+/* ── Background texture ───────────────────────────────────────────────────── */
+.texture-dots {
+  background-image: radial-gradient(circle, rgba(232, 97, 58, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.texture-grid {
+  background-image:
+    linear-gradient(rgba(232, 97, 58, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 97, 58, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Soft vignette overlay for landing hero */
+.hero-vignette::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, transparent 40%, rgba(253, 246, 239, 0.7) 100%);
+  pointer-events: none;
+}
+
+/* Widget iframe container */
+.widget-frame-wrap {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 20px 60px -12px rgba(232, 97, 58, 0.25), 0 4px 16px -4px rgba(0,0,0,0.08);
+  border: 2px solid var(--widget-border);
+}
