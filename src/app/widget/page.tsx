@@ -108,7 +108,7 @@ export default function WidgetPage() {
       >
         <div
           className="flex h-8 w-8 items-center justify-center rounded-xl flex-shrink-0"
-          style={{ background: 'var(--coral)', boxShadow: '0 4px 12px rgba(232,97,58,0.3)' }}
+          style={{ background: 'var(--coral-deep)', boxShadow: '0 4px 12px rgba(159,55,26,0.3)' }}
         >
           <span style={{ fontFamily: 'var(--font-display)', fontSize: '14px', fontWeight: 700, color: 'white' }}>?</span>
         </div>
@@ -149,7 +149,7 @@ export default function WidgetPage() {
             {msg.role === 'user' ? (
               <div
                 className="rounded-3xl rounded-br-lg px-4 py-2.5 max-w-[85%]"
-                style={{ background: 'var(--coral)', color: 'white', fontFamily: 'var(--font-body)', fontSize: '13px', lineHeight: 1.5 }}
+                style={{ background: 'var(--coral-deep)', color: 'white', fontFamily: 'var(--font-body)', fontSize: '13px', lineHeight: 1.5 }}
               >
                 {msg.text}
               </div>
@@ -233,7 +233,7 @@ export default function WidgetPage() {
           aria-label="Send question"
           style={{
             borderRadius: '9999px',
-            background: 'var(--coral)',
+            background: 'var(--coral-deep)',
             color: 'white',
             border: 'none',
             padding: '8px 18px',

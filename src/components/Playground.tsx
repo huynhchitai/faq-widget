@@ -148,7 +148,7 @@ export default function Playground() {
         <div className="card-static flex flex-col h-[420px] overflow-hidden">
           {/* Chat header */}
           <div className="flex items-center gap-3 border-b border-widget-border pb-3 mb-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-coral shadow-pillowy-sm">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-coral-deep shadow-pillowy-sm">
               <span className="font-display text-sm font-bold text-white" aria-hidden>?</span>
             </div>
             <div>

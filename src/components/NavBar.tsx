@@ -9,8 +9,8 @@ export default function NavBar({ here }: NavBarProps) {
     <nav className="nav-bar">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-10">
         <Link href="/" className="flex items-center gap-2.5 group">
-          {/* Logo mark */}
-          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-coral shadow-pillowy-sm
+          {/* Logo mark — coral-deep for ≥7:1 white-on-dark contrast */}
+          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-coral-deep shadow-pillowy-sm
                           transition-transform duration-200 group-hover:scale-105">
             <span className="font-display text-sm font-bold text-white" aria-hidden>?</span>
           </div>

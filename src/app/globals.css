@@ -80,15 +80,21 @@ code, pre, kbd {
     @apply sticky top-0 z-50 border-b border-widget-border bg-cream/90 backdrop-blur-sm;
   }
 
-  /* Pill button — coral */
+  /* Pill button — coral. Uses coral-deep for guaranteed white-on-dark contrast
+     (≥7:1), and hovers to a still-darker shade so the hover state doesn't
+     unreadably lighten. */
   .btn-coral {
-    @apply inline-flex items-center gap-2 rounded-pill bg-coral px-6 py-3
+    @apply inline-flex items-center gap-2 rounded-pill px-6 py-3
            font-display font-semibold text-white
            shadow-pillowy-sm
            transition-all duration-200
-           hover:bg-coral-deep hover:shadow-pillowy hover:-translate-y-0.5
+           hover:shadow-pillowy hover:-translate-y-0.5
            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2
            active:translate-y-0 active:shadow-pillowy-sm;
+    background: var(--coral-deep);
+  }
+  .btn-coral:hover {
+    background: #7E2811;
   }
 
   /* Pill button — ghost */
@@ -172,9 +178,10 @@ code, pre, kbd {
     animation-delay: 0.4s;
   }
 
-  /* Chat bubble */
+  /* Chat bubble — user side uses coral-deep so white text stays readable. */
   .bubble-user {
-    @apply rounded-3xl rounded-br-lg bg-coral px-4 py-3 text-sm text-white font-body max-w-[85%] self-end;
+    @apply rounded-3xl rounded-br-lg px-4 py-3 text-sm text-white font-body max-w-[85%] self-end;
+    background: var(--coral-deep);
   }
 
   .bubble-bot {
