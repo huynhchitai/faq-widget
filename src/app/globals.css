@@ -11,19 +11,19 @@
   --blush: #fde8d8;
 
   /* Coral accent */
-  --coral: #e8613a;
-  --coral-rgb: 232, 97, 58; /* RGB channels for Tailwind opacity modifier (ring-coral/20 etc.) */
-  --coral-deep: #c94f2a;
+  --coral: #d54d28;
+  --coral-rgb: 213, 77, 40; /* RGB channels for Tailwind opacity modifier (ring-coral/20 etc.) */
+  --coral-deep: #9F371A;
   --coral-light: #f5977a;
 
   /* Grass accent */
-  --grass: #4caf7d;
+  --grass: #3F926A;
   --grass-light: #7ecfa0;
 
-  /* Ink */
+  /* Ink — darkened ink-quiet to meet WCAG AA on cream (was #8a6e5e ≈ 4.0:1) */
   --ink: #1c1410;
-  --ink-soft: #4a3728;
-  --ink-quiet: #8a6e5e;
+  --ink-soft: #3D2C1F;
+  --ink-quiet: #6A5238;
 
   /* Widget specific */
   --widget-bg: #fff8f3;
