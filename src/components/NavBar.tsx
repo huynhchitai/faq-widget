@@ -43,7 +43,7 @@ export default function NavBar({ here }: NavBarProps) {
         <div className="hidden sm:flex items-center gap-2">
           <span className="badge">Portfolio #5</span>
           <a
-            href="https://github.com/0CCHacker"
+            href="https://github.com/huynhchitai"
             className="font-display text-sm font-semibold text-ink-quiet hover:text-coral transition-colors"
           >
             Tai Huynh

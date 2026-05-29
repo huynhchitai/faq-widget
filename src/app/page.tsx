@@ -184,9 +184,9 @@ export default function HomePage() {
             Tai Huynh · 2026 · FAQ Widget · Portfolio Project #5 · built with Next.js 14 &amp; Vertex AI
           </p>
           <p className="font-body text-xs text-ink-quiet">
-            <a href="https://github.com/0CCHacker" className="hover:text-coral transition-colors">Tai Huynh</a>
+            <a href="https://github.com/huynhchitai" className="hover:text-coral transition-colors">Tai Huynh</a>
             <span className="mx-2 opacity-30">·</span>
-            <a href="https://github.com/0CCHacker" className="hover:text-coral transition-colors">github</a>
+            <a href="https://github.com/huynhchitai" className="hover:text-coral transition-colors">github</a>
             <span className="mx-2 opacity-30">·</span>
             <a href="mailto:huynhchitai.070306@gmail.com" className="hover:text-coral transition-colors">email</a>
           </p>

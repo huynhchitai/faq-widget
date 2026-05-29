@@ -2,7 +2,7 @@
 
 Paste a knowledge base, get an AI FAQ assistant that embeds on any site with one `<script>` tag.
 
-> Portfolio Project #5 — [Tai Huynh](https://github.com/0CCHacker)
+> Portfolio Project #5 — [Tai Huynh](https://github.com/huynhchitai)
 
 ---
 
